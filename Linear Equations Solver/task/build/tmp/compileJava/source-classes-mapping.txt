@@ -1,0 +1,8 @@
+solver/Main.java
+ solver.Main
+solver/userInterface/UI.java
+ solver.userInterface.UI
+solver/domain/Matrix.java
+ solver.domain.Matrix
+solver/logic/LinearEquation.java
+ solver.logic.LinearEquation

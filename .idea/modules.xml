@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Linear_Equations_Solver.iml" filepath="$PROJECT_DIR$/.idea/modules/Linear_Equations_Solver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Linear Equations Solver/task/Linear_Equations_Solver.Linear_Equations_Solver-task.iml" filepath="$PROJECT_DIR$/.idea/modules/Linear Equations Solver/task/Linear_Equations_Solver.Linear_Equations_Solver-task.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Linear Equations Solver/task/Linear_Equations_Solver.Linear_Equations_Solver-task.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Linear Equations Solver/task/Linear_Equations_Solver.Linear_Equations_Solver-task.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Linear Equations Solver/task/Linear_Equations_Solver.Linear_Equations_Solver-task.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Linear Equations Solver/task/Linear_Equations_Solver.Linear_Equations_Solver-task.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/Books as strings/Linear_Equations_Solver.Problems-Books_as_strings.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/Books as strings/Linear_Equations_Solver.Problems-Books_as_strings.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/Books as strings/Linear_Equations_Solver.Problems-Books_as_strings.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/Books as strings/Linear_Equations_Solver.Problems-Books_as_strings.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/Books as strings/Linear_Equations_Solver.Problems-Books_as_strings.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/Books as strings/Linear_Equations_Solver.Problems-Books_as_strings.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/Distance/Linear_Equations_Solver.Problems-Distance.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/Distance/Linear_Equations_Solver.Problems-Distance.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/Distance/Linear_Equations_Solver.Problems-Distance.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/Distance/Linear_Equations_Solver.Problems-Distance.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/Distance/Linear_Equations_Solver.Problems-Distance.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/Distance/Linear_Equations_Solver.Problems-Distance.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/Exponential expression/Linear_Equations_Solver.Problems-Exponential_expression.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/Exponential expression/Linear_Equations_Solver.Problems-Exponential_expression.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/Exponential expression/Linear_Equations_Solver.Problems-Exponential_expression.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/Exponential expression/Linear_Equations_Solver.Problems-Exponential_expression.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/Exponential expression/Linear_Equations_Solver.Problems-Exponential_expression.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/Exponential expression/Linear_Equations_Solver.Problems-Exponential_expression.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/Find X/Linear_Equations_Solver.Problems-Find_X.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/Find X/Linear_Equations_Solver.Problems-Find_X.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/Find X/Linear_Equations_Solver.Problems-Find_X.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/Find X/Linear_Equations_Solver.Problems-Find_X.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/Find X/Linear_Equations_Solver.Problems-Find_X.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/Find X/Linear_Equations_Solver.Problems-Find_X.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/Time as a string/Linear_Equations_Solver.Problems-Time_as_a_string.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/Time as a string/Linear_Equations_Solver.Problems-Time_as_a_string.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/Time as a string/Linear_Equations_Solver.Problems-Time_as_a_string.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/Time as a string/Linear_Equations_Solver.Problems-Time_as_a_string.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/Time as a string/Linear_Equations_Solver.Problems-Time_as_a_string.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/Time as a string/Linear_Equations_Solver.Problems-Time_as_a_string.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/Users as strings/Linear_Equations_Solver.Problems-Users_as_strings.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/Users as strings/Linear_Equations_Solver.Problems-Users_as_strings.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/Users as strings/Linear_Equations_Solver.Problems-Users_as_strings.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/Users as strings/Linear_Equations_Solver.Problems-Users_as_strings.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/Users as strings/Linear_Equations_Solver.Problems-Users_as_strings.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/Users as strings/Linear_Equations_Solver.Problems-Users_as_strings.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/util/Linear_Equations_Solver.util.iml" filepath="$PROJECT_DIR$/.idea/modules/util/Linear_Equations_Solver.util.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/util/Linear_Equations_Solver.util.main.iml" filepath="$PROJECT_DIR$/.idea/modules/util/Linear_Equations_Solver.util.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/util/Linear_Equations_Solver.util.test.iml" filepath="$PROJECT_DIR$/.idea/modules/util/Linear_Equations_Solver.util.test.iml" />
+    </modules>
+  </component>
+</project>
