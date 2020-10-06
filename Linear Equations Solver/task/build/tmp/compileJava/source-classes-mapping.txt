@@ -1,3 +1,5 @@
+solver/domain/ComplexNumber.java
+ solver.domain.ComplexNumber
 solver/Main.java
  solver.Main
 solver/userInterface/UI.java

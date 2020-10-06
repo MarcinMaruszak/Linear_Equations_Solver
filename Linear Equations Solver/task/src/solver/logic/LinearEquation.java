@@ -1,7 +1,7 @@
 package solver.logic;
 
+import solver.domain.ComplexNumber;
 import solver.domain.Matrix;
-
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 
 public class LinearEquation {
-    private Matrix matrix;
+    private final Matrix matrix;
     private boolean noSolutions;
     private boolean infiniteSolutions;
 
@@ -22,10 +22,12 @@ public class LinearEquation {
     }
 
     public void solve(){
-        //matrix.print();
+        matrix.print();
         System.out.println("Start solving the equation.");
         matrixChecks();
-        //matrix.print();
+        matrix.sort();
+        matrix.print();
+        System.out.println();
         matrixZeroBottom();
         matrixZeroTop();
 
@@ -33,25 +35,49 @@ public class LinearEquation {
 
     private void matrixZeroBottom(){
         for (int i = 0; i<matrix.getMatrix().length;i++) {
-            double value;
-            value = firstNoNZero(matrix.getMatrix()[i]);
-            if(value!=-1){
-                System.out.println((-1/value)+" * R"+(i+1)+" -> R"+(i+1));
-                makeOne(matrix.getMatrix()[i]);
+            ComplexNumber value;
+            value = matrix.getFirstNonZero(i);
+            if(value.toString().contains("i")){
+                System.out.println("R"+(i+1)+" / "+value+ " -> R"+(i+1));
+                ComplexNumber [] row = matrix.divide(value, matrix.getRow(i));
+                matrix.setRow(row,i);
                 matrixChecks();
+                matrix.sort();
+                ///matrix.print();
+                //System.out.println();
                 if(noSolutions||infiniteSolutions){
                     break;
                 }
+            }else {
+                double d = Double.parseDouble(value.toString());
+                //System.out.println("value  "+value);
+                if(!value.toString().equals("1")){
+                    System.out.println((1/d)+" * R"+(i+1)+" -> R"+(i+1));
+                    ComplexNumber [] row = matrix.multiply((1.0/d),i);
+                    matrix.setRow(row,i);
+                    matrix.sort();
+                    matrixChecks();
+                    //matrix.print();
+                    //System.out.println();
+                    if(noSolutions||infiniteSolutions){
+                        break;
+                    }
+                }
             }
             for(int j =i+1;j< matrix.getMatrix().length;j++){
-                if(matrix.getMatrix()[j][i]!=0){
-                    value = firstNoNZero(matrix.getMatrix()[j]);
-                    System.out.println((value) +" * R"+j +" + R"+(j+1)+" -> R"+(j+1));
-                    double [] row = matrix.getMatrix()[j];
-                    addRows(row, multiplyRow(value,matrix.getMatrix()[i].clone()));
+                if(!matrix.getMatrix()[j][i].toString().equals("0")){
+                    value = matrix.getFirstNonZero(j).multiply(-1);
+                    System.out.println(value +" * R"+(i+1) +" + R"+(j+1)+" -> R"+(j+1));
+                    ComplexNumber [] row = matrix.multiply(value,i);
+                    try {
+                        row=matrix.addRows(row,matrix.getRow(j));
+                    } catch (Exception e) {
+                        //e.printStackTrace();
+                    }
                     matrix.setRow(row,j);
-                    //matrix.print();
                     matrixChecks();
+                    //matrix.print();
+                    //System.out.println();
                     if(noSolutions||infiniteSolutions){
                         break;
                     }
@@ -59,79 +85,48 @@ public class LinearEquation {
             }
         }
     }
-
     private void matrixZeroTop(){
         if (!noSolutions&&!infiniteSolutions) {
             for(int i = matrix.getMatrix().length-2;i>=0;i--){
                 for(int j = matrix.getMatrix()[0].length-2;j>i;j--){
-                    double value = matrix.getMatrix()[i][j];
-                    if(value!=0){
-                        System.out.println((value*-1)+" * R"+ (j+1) +" + R"+(i+1)+" -> R"+(i+1));
+                    ComplexNumber value = matrix.getMatrix()[i][j];
+                    value=value.multiply(-1);
+                    if(!value.toString().equals("0")){
+                        System.out.println((value)+" * R"+ (j+1) +" + R"+(i+1)+" -> R"+(i+1));
                         try {
-                            addRows(matrix.getMatrix()[i],multiplyRow((value*-1),matrix.getMatrix()[j].clone()));
+                            ComplexNumber [] row = matrix.multiply(value,j);
+                            row=matrix.addRows(row,matrix.getRow(i));
+                            matrix.setRow(row,i);
                         } catch (Exception e) {
                             //e.printStackTrace();
                         }
+                        matrix.print();
                     }
                 }
             }
-            matrix.print();
-            matrix.printSolution();
-        }
-    }
 
-    private double firstNoNZero(double [] row){
-        double value=0;
-        for(double d: row){
-            if(d!=0){
-                value=d*-1;
-                break;
-            }
         }
-        return value;
-    }
-
-    private void makeOne(double [] row){
-        double first = 1.0/(firstNoNZero(row)*-1);
-        if(first!=-1){
-            for(int i=0; i< row.length;i++){
-                if(row[i]!=0){
-                    double d = row[i]*first;
-                    d = Math.round(d*100000d)/100000d;
-                    row[i] =d;
-                }
-            }
-        }
-    }
-
-    private double[] multiplyRow(double value, double[] row){
-        for(int i=0;i<row.length;i++){
-            row[i]*=value;
-        }
-        return row;
-    }
-
-    private void addRows(double [] row, double [] row2){
-        for(int i = 0; i< row.length;i++){
-            row[i]+=row2[i];
-        }
+        matrix.print();
+        matrix.printSolution();
     }
 
     public void loadFromFile(String fileName){
         try(Scanner scanner = new Scanner(new File(fileName))) {
             String s = scanner.nextLine();
             int [] ints = Arrays.stream(s.split(" ")).mapToInt(Integer::parseInt).toArray();
-            matrix.setMatrix(ints[1]);
+            ComplexNumber [][] matrix = new ComplexNumber[ints[1]][];
             int i =0;
             while (scanner.hasNext()){
                 String line = scanner.nextLine();
-                double [] row = Arrays.stream(line.split(" "))
-                        .mapToDouble(Double::parseDouble)
-                        .toArray();
-                matrix.setRow(row,i);
+                String [] split= line.split(" ");
+                ComplexNumber[] row = new ComplexNumber[split.length];
+                for (int j = 0;j<split.length;j++){
+                    row[j]=new ComplexNumber(split[j]);
+                }
+                matrix[i]=row;
                 i++;
             }
-
+            this.matrix.setMatrix(matrix);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -147,8 +142,8 @@ public class LinearEquation {
                 System.out.println("Infinitely many solutions");
                 writer.write("Infinitely many solutions");
             }else {
-                for(double [] row : matrix.getMatrix()){
-                    writer.write(String.valueOf(row[row.length-1]));
+                for(ComplexNumber[] row : matrix.getMatrix()){
+                    writer.write(String.valueOf(row[row.length-1].toString()));
                     writer.write(System.lineSeparator());
                 }
             }
@@ -159,7 +154,6 @@ public class LinearEquation {
     }
 
     private void matrixChecks(){
-        matrix.sort();
         matrix.trim();
         infiniteSolutions=matrix.infiniteSolutions();
         noSolutions=matrix.checkNoSolution();

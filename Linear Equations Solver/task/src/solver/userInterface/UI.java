@@ -4,7 +4,7 @@ import solver.logic.LinearEquation;
 
 
 public class UI {
-    private String [] input;
+    private final String [] input;
     LinearEquation linearEquation;
 
     public UI(String [] input) {

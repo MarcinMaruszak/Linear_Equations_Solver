@@ -18,7 +18,7 @@ stages:
   is_completed: true
 - id: 213
   step: 5309
-  is_completed: false
+  is_completed: true
 topics:
   0:
   - title: Introduction to Java
@@ -72,7 +72,7 @@ topics:
   - title: Row echelon form
     theory_id: 8050
   - title: IDE
-    theory_id: 3805
+    theory_id: 10996
   - title: What is an exception
     theory_id: 3497
   - title: Hierarchy of exceptions
